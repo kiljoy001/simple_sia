@@ -7345,10 +7345,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/scott/RiderProjects/simple sia connect/simple sia connect/simple sia connect.csproj",
+      "projectUniqueName": "/home/scott/RiderProjects/simple_sia/simple sia connect/simple sia connect.csproj",
       "projectName": "simple sia connect",
-      "projectPath": "/home/scott/RiderProjects/simple sia connect/simple sia connect/simple sia connect.csproj",
-      "outputPath": "/home/scott/RiderProjects/simple sia connect/simple sia connect/obj/",
+      "projectPath": "/home/scott/RiderProjects/simple_sia/simple sia connect/simple sia connect.csproj",
+      "outputPath": "/home/scott/RiderProjects/simple_sia/simple sia connect/obj/",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

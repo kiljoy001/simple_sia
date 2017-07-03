@@ -12,8 +12,11 @@ namespace simple_sia_connect
     {
         static void Main(string[] args)
         {
-            var test = new DaemonConstants();
-            test.Connect(test.Agent, test.Address).Wait();
+            using (var test = new DaemonConstants())
+            {
+                test.Connect(test.Agent, test.Address).Wait();
+            }
+            
         }
     }
 }
