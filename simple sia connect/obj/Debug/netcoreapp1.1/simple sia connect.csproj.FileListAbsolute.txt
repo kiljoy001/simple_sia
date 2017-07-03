@@ -1,0 +1,8 @@
+/home/scott/RiderProjects/simple sia connect/simple sia connect/bin/Debug/netcoreapp1.1/simple sia connect.deps.json
+/home/scott/RiderProjects/simple sia connect/simple sia connect/bin/Debug/netcoreapp1.1/simple sia connect.runtimeconfig.json
+/home/scott/RiderProjects/simple sia connect/simple sia connect/bin/Debug/netcoreapp1.1/simple sia connect.runtimeconfig.dev.json
+/home/scott/RiderProjects/simple sia connect/simple sia connect/bin/Debug/netcoreapp1.1/simple sia connect.dll
+/home/scott/RiderProjects/simple sia connect/simple sia connect/bin/Debug/netcoreapp1.1/obj/Debug/netcoreapp1.1/simple sia connect.pdb
+/home/scott/RiderProjects/simple sia connect/simple sia connect/obj/Debug/netcoreapp1.1/simple sia connect.AssemblyInfo.cs
+/home/scott/RiderProjects/simple sia connect/simple sia connect/obj/Debug/netcoreapp1.1/simple sia connect.dll
+/home/scott/RiderProjects/simple sia connect/simple sia connect/obj/Debug/netcoreapp1.1/simple sia connect.pdb
