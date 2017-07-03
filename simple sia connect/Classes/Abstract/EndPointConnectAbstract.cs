@@ -9,11 +9,12 @@ namespace simple_sia_connect.Classes.Daemon
 {
     public abstract class EndPointConnectAbstract : IEndPoint, IDisposable
     {
-        public abstract string Agent { get; }
-        public abstract string Address { get; }
+        //Decided to make this abstract since Sia is a realtively young project - in time they may chance the address or agent name. Also allows for customizable address
+        protected abstract string Agent { get; }
+        protected abstract string Address { get; }
         private bool _disposed = false;
 
-        public abstract Task Connect(string agentName, string agentAddress);
+        protected abstract Task Connect(string agentName, string agentAddress);
 
         public void Dispose()
         {
@@ -30,6 +31,9 @@ namespace simple_sia_connect.Classes.Daemon
             }
             _disposed = true;
         }
+        public IEndPoint GetObject()
+            {
 
+            }
     }
 }
