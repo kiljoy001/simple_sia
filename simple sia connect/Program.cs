@@ -14,7 +14,13 @@ namespace simple_sia_connect
         {
             using (var test = new DaemonConstants())
             {
-                test.Connect(test.Agent, test.Address).Wait();
+                test.Connect().Wait();
+            }
+            Console.WriteLine("Press key to continue");
+            Console.ReadLine();
+            using (var test2 = new ConsensusStatus())
+            {
+                test2.Connect().Wait();
             }
             
         }
