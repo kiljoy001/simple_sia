@@ -17,11 +17,11 @@ namespace simple_sia_connect.Classes.Daemon
         
         
         //Method
-        public override async Task Connect(string agentName, string agentAddress)
+        public override async Task Connect()
         {
             var client = new HttpClient();
-            client.DefaultRequestHeaders.UserAgent.ParseAdd(agentName);
-            var returnValue = client.GetStringAsync(agentAddress);
+            client.DefaultRequestHeaders.UserAgent.ParseAdd(this.Agent);
+            var returnValue = client.GetStringAsync(this.Address);
             var msg = await returnValue;
             Console.WriteLine(msg);
         }
