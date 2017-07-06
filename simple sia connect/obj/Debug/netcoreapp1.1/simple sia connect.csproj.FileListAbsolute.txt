@@ -22,3 +22,12 @@ C:/Users/user/Source/Repos/simple_sia/simple sia connect/obj/Debug/netcoreapp1.1
 C:/Users/user/Source/Repos/simple_sia/simple sia connect/obj/Debug/netcoreapp1.1/simple sia connect.dll
 C:/Users/user/Source/Repos/simple_sia/simple sia connect/obj/Debug/netcoreapp1.1/simple sia connect.pdb
 /home/scott/RiderProjects/simple_sia/simple sia connect/obj/Debug/netcoreapp1.1/simple sia connect.csprojResolveAssemblyReference.cache
+C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\bin\Debug\netcoreapp1.1\simple sia connect.deps.json
+C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\bin\Debug\netcoreapp1.1\simple sia connect.runtimeconfig.json
+C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\bin\Debug\netcoreapp1.1\simple sia connect.runtimeconfig.dev.json
+C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\bin\Debug\netcoreapp1.1\simple sia connect.dll
+C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\bin\Debug\netcoreapp1.1\simple sia connect.pdb
+C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\obj\Debug\netcoreapp1.1\simple sia connect.csprojResolveAssemblyReference.cache
+C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\obj\Debug\netcoreapp1.1\simple sia connect.AssemblyInfo.cs
+C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\obj\Debug\netcoreapp1.1\simple sia connect.dll
+C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\obj\Debug\netcoreapp1.1\simple sia connect.pdb
