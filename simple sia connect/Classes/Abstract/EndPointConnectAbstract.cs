@@ -1,5 +1,5 @@
 ﻿/*
-This abstract class was created to make http GET connections easy. It implements IEndpoint and IDisposable.
+This abstract class was created to make http GET connections easy. It implements IEndpoint.
 */
 
 using System;
