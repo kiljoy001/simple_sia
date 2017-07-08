@@ -156,4 +156,17 @@ public class TransactionSignature
 }
 
 public class CoveredFields
-    
+{
+    Boolean wholetransaction {get; set;}
+    Decimal[] siacoininputs {get; set;}
+    Decimal[] siacoinoutputs {get; set;}
+    Decimal[] filecontracts {get; set;}
+    Decimal[] filecontractrevision {get; set;}
+    Decimal[] storageproofs {get; set;}
+    Decimal[] siafundinputs {get; set;}
+    Decimal[] siafundoutputs {get; set;}
+    Decimal[] minerfees {get; set;}
+    Decimal[] arbitrarydata {get; set;}
+    Decimal[] transactionsignatures {get; set;}
+}
+
