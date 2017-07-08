@@ -24,13 +24,7 @@ namespace simple_sia_connect
             Console.WriteLine("Press key to continue");
             Console.ReadLine();
             var test3 = new ConsensusValidateTransactionSet();
-            JsonUtxoModel model = JsonConvert.DeserializeObject<JsonUtxoModel>(json);
-            string modeloutput = JsonConvert.SerializeObject(model);
-            Console.WriteLine(modeloutput);
-            Console.WriteLine("Press key to continue");
-            Console.ReadLine();
-            test3.Post(client).Wait();
-            Console.ReadLine();
+            
         }
       
     }

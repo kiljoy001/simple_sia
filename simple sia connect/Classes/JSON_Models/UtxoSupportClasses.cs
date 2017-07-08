@@ -13,7 +13,7 @@ public class SiaCoinInput
 
 public class SiaCoinInputID
 {
-    public string data { get; set; }
+    public Hash data { get; set; }
 }
 public class SiaCoinOutput
 {
@@ -30,7 +30,7 @@ public class SiafundInput
 
 public class SiafundOutputID
 {
-    public string data { get; set; }
+    public Hash data { get; set; }
 }
 public class SiafundOutput
 {
@@ -53,7 +53,7 @@ public class FileContract
 
 public class Hash
 {
-    public string data { get; set; }
+    public byte[] data { get; set; }
     private const int HashSize = 32;
     public byte[] Array()
     {
@@ -105,12 +105,12 @@ public class Specifier
 
 public class UnlockHash
 {
-    public string data { get; set; }
+    public Hash data { get; set; }
 }
 
 public class FileContractID
 {
-    public string data { get; set; }
+    public Hash data { get; set; }
 }
 
 public class Currency
@@ -120,7 +120,7 @@ public class Currency
 
 public class SiaCoinOutputID
 {
-    public string data { get; set; }
+    public Hash data { get; set; }
 }
 
 public class SegmentSize
