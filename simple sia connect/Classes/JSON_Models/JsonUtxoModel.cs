@@ -12,11 +12,11 @@ namespace simple_sia_connect.Classes.JSON_Models
         public List<SiaCoinOutput> siacoinoutputs { get; set; }
         public List<FileContract> filecontracts { get; set; }
         public List<FileContractRevision> filecontractrevisions { get; set; }
-        public string storageproofs { get; set; }
-        public string siafundinputs { get; set; }
-        public string siafundoutputs { get; set; }
-        public string minerfees { get; set; }
-        public string arbitrarydatas { get; set; }
-        public string transactionsignatures { get; set; }
+        public List<StorageProof> storageproofs { get; set; }
+        public List<SiafundInput> siafundinputs { get; set; }
+        public List<SiafundOutput> siafundoutputs { get; set; }
+        public List<Currency> minerfees { get; set; }
+        public List<Byte[]> arbitrarydatas { get; set; }
+        public List<TransactionSignature> transactionsignatures { get; set; }
     }
 }

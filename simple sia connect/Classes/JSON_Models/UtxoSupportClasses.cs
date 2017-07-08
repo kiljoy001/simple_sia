@@ -95,7 +95,7 @@ public class SiaPublicKey
 
 public class Specifier
 {
-    public string data { get; set; } 
+    public byte[] data { get; set; } 
     private const int SpecifierLen = 16;
     public byte[] Array()
     {
@@ -121,4 +121,27 @@ public class Currency
 public class SiaCoinOutputID
 {
     public string data { get; set; }
+}
+
+public class SegmentSize
+{
+    public string data { get; set; }
+}
+
+public class Segment
+{
+    public byte[] data { get; set; }
+    private SegmentSize _size { get; set; }
+    public Segment(SegmentSize size)
+    {
+        _size = size;
+        data = new byte[int.Parse(_size.data)];
+    }
+}
+
+public class StorageProof
+{
+    public FileContractID parentid { get; set; }
+    public Segment segment { get; set; }
+    Hash[] hashset { get; set; }
 }
