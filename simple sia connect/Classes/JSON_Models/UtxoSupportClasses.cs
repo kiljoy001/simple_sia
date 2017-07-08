@@ -145,3 +145,15 @@ public class StorageProof
     public Segment segment { get; set; }
     Hash[] hashset { get; set; }
 }
+
+public class TransactionSignature
+{
+    Hash parentid {get; set;}
+    Decimal publickeyindex {get; set;}
+    BlockHeight timelock {get; set;}
+    CoveredFields coveredfields {get; set;}
+    Byte[] signature {get; set;}
+}
+
+public class CoveredFields
+    

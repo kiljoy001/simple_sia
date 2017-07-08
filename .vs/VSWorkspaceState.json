@@ -6,7 +6,7 @@
     "\\simple sia connect\\Classes\\Abstract",
     "\\simple sia connect\\Classes\\Consensus",
     "\\simple sia connect\\Classes\\Daemon",
-    "\\simple sia connect\\Interfaces"
+    "\\simple sia connect\\Classes\\JSON_Models"
   ],
   "SelectedNode": "\\simple sia connect.sln",
   "PreviewInSolutionExplorer": false
