@@ -8,8 +8,8 @@ namespace simple_sia_connect.Classes.Daemon
 {
     class DaemonStop: EndPointConnectAbstract
     {
-        public override string Agent => "Sia-Agent";
-        public override string Address => "http://localhost:9980/daemon/stop";
+        public override string Address { set => Address = "http://localhost:9980/daemon/stop"; get => Address; }
+
         public override async Task Connect(HttpClient client)
         {
             HttpResponseMessage response = await client.GetAsync(Address);

@@ -8,8 +8,8 @@ namespace simple_sia_connect.Classes.Daemon
 {
     class DaemonVersion: EndPointConnectAbstract
     {
-        public override string Agent => "Sia-Agent";
-        public override string Address => "//localhost:9980/daemon/version";
+        public override string Address { set => Address = "http://localhost:9980/daemon/version"; get => Address; }
+
         public override async Task Connect(HttpClient client)
         {
             client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);

@@ -9,8 +9,7 @@ namespace simple_sia_connect.Classes.Gateway
 {
     class GatewayStatus:EndPointConnectAbstract
     {
-        public override string Address => "http://localhost:9980/gateway";
-        public override string Agent => "Sia-Agent";
+        public override string Address { set => Address = "http://localhost:9980/gateway"; get => Address; }
 
         public override async Task Connect(HttpClient client)
         {
