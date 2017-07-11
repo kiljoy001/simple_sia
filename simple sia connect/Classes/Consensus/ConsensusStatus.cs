@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 public class ConsensusStatus: EndPointConnectAbstract
 {
-    public override string Address { set => Address = "http://localhost:9980/consensus}"; get => Address; }
+    public ConsensusStatus(string siaAddress) : base(siaAddress)
+    {
+    }
+
+    public ConsensusStatus()
+    {
+        Address = "http://localhost:9980/consensus";
+    }
+
+    public override string Address { get; set; }
 
     public override async Task Connect(HttpClient client)
     {

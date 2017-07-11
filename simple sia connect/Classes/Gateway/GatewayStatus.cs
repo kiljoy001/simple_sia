@@ -7,10 +7,17 @@ using System.Threading.Tasks;
 
 namespace simple_sia_connect.Classes.Gateway
 {
-    class GatewayStatus:EndPointConnectAbstract
+    class GatewayStatus : EndPointConnectAbstract
     {
-        public override string Address { set => Address = "http://localhost:9980/gateway"; get => Address; }
+        public override string Address { get; set; }
+        public GatewayStatus(string siaAddress) : base(siaAddress)
+        {
 
+        }
+        public GatewayStatus()
+        {
+            Address = "http://localhost:9980/consensus";
+        }
         public override async Task Connect(HttpClient client)
         {
             client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);
