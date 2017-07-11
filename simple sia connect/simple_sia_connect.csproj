@@ -9,7 +9,6 @@
     <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\Gateway" />
     <Folder Include="Classes\Host" />
     <Folder Include="Classes\Host DB" />
     <Folder Include="Classes\Miner" />

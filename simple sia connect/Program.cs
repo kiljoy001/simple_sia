@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using simple_sia_connect.Classes.Daemon;
 using simple_sia_connect.Classes.Consensus;
 using simple_sia_connect.Classes.JSON_Models;
+using simple_sia_connect.Classes.Gateway;
 using Newtonsoft.Json;
 
 namespace simple_sia_connect
@@ -23,8 +24,11 @@ namespace simple_sia_connect
             test2.Connect(client).Wait();
             Console.WriteLine("Press key to continue");
             Console.ReadLine();
-            var test3 = new ConsensusValidateTransactionSet();
-            
+            // test later var test3 = new ConsensusValidateTransactionSet();
+            var test4 = new GatewayStatus();
+            test4.Connect(client).Wait();
+            Console.WriteLine("Press key to continue");
+            Console.ReadLine();
         }
       
     }

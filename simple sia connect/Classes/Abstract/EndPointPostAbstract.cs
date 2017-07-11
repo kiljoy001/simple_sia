@@ -9,8 +9,8 @@ namespace simple_sia_connect.Classes.Abstract
 {
     public abstract class EndPointPostAbstract:IEndPoint
     {
-        public abstract string Agent { get; }
-        public abstract string Address { get; }
+        public string Agent => "Sia-Agent";
+        public abstract string Address { set;  get; }
         //inject client & object model into method
         public async Task Post(HttpClient client, Object data)
         {

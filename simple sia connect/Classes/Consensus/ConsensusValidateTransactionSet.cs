@@ -11,8 +11,6 @@ namespace simple_sia_connect.Classes.Consensus
 {
     class ConsensusValidateTransactionSet: EndPointPostAbstract
     {
-        public override string Agent => "Sia-Agent";
-        public override string Address => "http://localhost:9980/consensus/validate/transactionset";
-
+        public override string Address { set => Address = "http://localhost:9980/consensus/validate/transactionset"; get => Address; }
     }
 }

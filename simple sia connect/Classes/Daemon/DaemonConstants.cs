@@ -9,9 +9,8 @@ namespace simple_sia_connect.Classes.Daemon
     {
         
         //Members
-        public override string Agent => "Sia-Agent";
 
-        public override string Address => "http://localhost:9980/daemon/constants";
+        public override string Address { set => Address = "http://localhost:9980/daemon/constants"; get => Address; }
       
         //Constructor is default
         
