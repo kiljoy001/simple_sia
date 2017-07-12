@@ -8,6 +8,7 @@ namespace simple_sia_connect.Classes.Daemon
 {
     class DaemonStop: EndPointConnectAbstract
     {
+        //TODO - fix this mess below. It will do a stackoverflow
         public override string Address { set => Address = "http://localhost:9980/daemon/stop"; get => Address; }
 
         public override async Task Connect(HttpClient client)
