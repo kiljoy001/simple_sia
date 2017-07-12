@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using simple_sia_connect.Classes.Abstract;
+using System;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace simple_sia_connect.Classes.Daemon
+namespace simple_sia_connect.Classes.Abstract
 {
     class DaemonVersion: EndPointConnectAbstract
     {

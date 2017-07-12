@@ -1,20 +1,21 @@
 ﻿using System;
-using simple_sia_connect.Classes.Abstract;
-using System.Net.Http;
-using System.Net.Http.Headers;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
+using System.Net.Http;
+using simple_sia_connect.Classes.Abstract;
 
-namespace simple_sia_connect.Classes.Consensus
+namespace simple_sia_connect.Classes.Host
 {
-    public class ConsensusStatus : EndPointConnectAbstract
+    class HostStorage : EndPointConnectAbstract
     {
-        public ConsensusStatus(string siaAddress) : base(siaAddress)
+        public HostStorage(string siaAddress)
         {
         }
 
-        public ConsensusStatus()
+        public HostStorage()
         {
-            Address = "http://localhost:9980/consensus";
+            Address = "http://localhost:9980/estimatescore";
         }
 
         public override string Address { get; set; }
@@ -26,6 +27,5 @@ namespace simple_sia_connect.Classes.Consensus
             var msg = await returnValue;
             Console.WriteLine(msg);
         }
-
     }
 }

@@ -18,7 +18,7 @@ namespace simple_sia_connect.Classes.Gateway
             ip = Regex.Match(netaddress, @"^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])\:\d{1,5}$");
             if (ip.Success)
             {
-                Address = $"http://localhost:9980/gateway/connect/:{netaddress}";
+                Address = $"http://localhost:9980/gateway/connect/{netaddress}";
             }
             else
             {
@@ -33,7 +33,7 @@ namespace simple_sia_connect.Classes.Gateway
             if (ip.Success)
             {
                 _netaddress = netaddress;
-                Address = $"http://{siaAddress}/gateway/connect/:{_netaddress}";
+                Address = $"http://{siaAddress}/gateway/connect/{_netaddress}";
             }
             else
             {
@@ -45,10 +45,7 @@ namespace simple_sia_connect.Classes.Gateway
             client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);
             if (_netaddress != null && Address != null)
             {
-                //using null as no data is passed
-                //var result = client.PostAsync(Address, null);
-                //HttpResponseMessage response = await result;
-                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, Address);
+                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, $"/gateway/connect/{_netaddress}");
                 HttpResponseMessage response = await client.SendAsync(request);
                 string returncode = response.StatusCode.ToString();
                 //error or success reporting

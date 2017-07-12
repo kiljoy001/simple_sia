@@ -1,15 +1,23 @@
-﻿using System;
+﻿using simple_sia_connect.Classes.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace simple_sia_connect.Classes.Daemon
+namespace simple_sia_connect.Classes.Abstract
 {
     class DaemonStop: EndPointConnectAbstract
     {
-        //TODO - fix this mess below. It will do a stackoverflow
-        public override string Address { set => Address = "http://localhost:9980/daemon/stop"; get => Address; }
+        public DaemonStop(string siaAddress) : base(siaAddress)
+        {
+        }
+
+        public DaemonStop()
+        {
+            Address = "http://localhost:9980/daemon/stop";
+        }
+        public override string Address { set; get; }
 
         public override async Task Connect(HttpClient client)
         {

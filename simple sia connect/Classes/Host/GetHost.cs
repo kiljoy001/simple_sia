@@ -1,20 +1,19 @@
-﻿using System;
-using simple_sia_connect.Classes.Abstract;
+﻿using simple_sia_connect.Classes.Abstract;
+using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
-namespace simple_sia_connect.Classes.Consensus
+namespace simple_sia_connect.Classes.Host
 {
-    public class ConsensusStatus : EndPointConnectAbstract
+    class GetHost : EndPointConnectAbstract
     {
-        public ConsensusStatus(string siaAddress) : base(siaAddress)
+        public GetHost(string siaAddress) : base(siaAddress)
         {
         }
 
-        public ConsensusStatus()
+        public GetHost()
         {
-            Address = "http://localhost:9980/consensus";
+            Address = "http://localhost:9980/host";
         }
 
         public override string Address { get; set; }
@@ -26,6 +25,5 @@ namespace simple_sia_connect.Classes.Consensus
             var msg = await returnValue;
             Console.WriteLine(msg);
         }
-
     }
 }

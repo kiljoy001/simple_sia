@@ -1,9 +1,7 @@
-﻿using simple_sia_connect.Classes.Daemon;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
+using simple_sia_connect.Classes.Abstract;
 
 namespace simple_sia_connect.Classes.Gateway
 {
@@ -12,7 +10,6 @@ namespace simple_sia_connect.Classes.Gateway
         public override string Address { get; set; }
         public GatewayStatus(string siaAddress) : base(siaAddress)
         {
-
         }
         public GatewayStatus()
         {

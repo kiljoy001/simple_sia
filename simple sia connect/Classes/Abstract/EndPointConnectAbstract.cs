@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
-namespace simple_sia_connect.Classes.Daemon
+namespace simple_sia_connect.Classes.Abstract
 {
     public abstract class EndPointConnectAbstract : IEndPoint
     {

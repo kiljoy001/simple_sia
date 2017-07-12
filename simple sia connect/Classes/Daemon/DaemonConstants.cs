@@ -1,9 +1,9 @@
-﻿using System;
+﻿using simple_sia_connect.Classes.Abstract;
+using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
-namespace simple_sia_connect.Classes.Daemon
+namespace simple_sia_connect.Classes.Abstract
 {
     public class DaemonConstants: EndPointConnectAbstract
     {
