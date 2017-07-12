@@ -3,7 +3,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace simple_sia_connect.Classes.Abstract
+namespace simple_sia_connect.Classes.Daemon
 {
     public class DaemonConstants: EndPointConnectAbstract
     {

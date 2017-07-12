@@ -3,19 +3,20 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace simple_sia_connect.Classes.Daemon
+namespace simple_sia_connect.Classes.Host_DB
 {
-    class DaemonVersion: EndPointConnectAbstract
+    class HostDBAll : EndPointConnectAbstract
     {
-        public DaemonVersion(string siaAddress) : base(siaAddress)
+        public HostDBAll(string siaAddress) : base(siaAddress)
         {
         }
 
-        public DaemonVersion()
+        public HostDBAll()
         {
-            Address = "http://localhost:9980/daemon/version";
+            Address = "http://localhost:9980/hostdb/all";
         }
-        public override string Address { set; get; }
+
+        public override string Address { get; set; }
 
         public override async Task Connect(HttpClient client)
         {

@@ -17,7 +17,7 @@ namespace simple_sia_connect.Classes.Abstract
         public abstract string Address { get; set; }
         //default constructor does not do anything except create the object, this can be overriden in implementation
         public EndPointConnectAbstract() { }
-        public EndPointConnectAbstract(string siaAddress) { _address = $"http://{siaAddress}"; Address = _address; }
+        public EndPointConnectAbstract(string siaAddress) { Address = $"http://{siaAddress}"; }
         //Each subclass should always have a connect method
         public abstract Task Connect(HttpClient client);
     }
