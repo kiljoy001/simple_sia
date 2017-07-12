@@ -1,9 +1,6 @@
-﻿using Newtonsoft.Json;
-using simple_sia_connect.Classes.Abstract;
+﻿using simple_sia_connect.Classes.Abstract;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -17,7 +14,7 @@ namespace simple_sia_connect.Classes.Gateway
 
         GatewayConnect(string netaddress)
         {
-            //regex matches for 1 to 3 digits with period seperator, will throw exception if ip address is not valid
+            //regex matches for 1 to 3 digits with period seperator, will throw exception if ip address is not valid. Addresses need to have port numbers as well.
             ip = Regex.Match(netaddress, @"^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])\:\d{1,5}$");
             if (ip.Success)
             {
@@ -31,7 +28,7 @@ namespace simple_sia_connect.Classes.Gateway
         public GatewayConnect(string netaddress, string siaAddress)
         {
             Address = $"http://{siaAddress}/gateway/connect/:";
-            //regex matches for 1 to 3 digits with period seperator, will throw exception if ip address is not valid 
+            //regex matches for 1 to 3 digits with period seperator, will throw exception if ip address is not valid  Addresses need to have port numbers as well.
             ip = Regex.Match(netaddress, @"^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])\:\d{1,5}$");
             if (ip.Success)
             {
