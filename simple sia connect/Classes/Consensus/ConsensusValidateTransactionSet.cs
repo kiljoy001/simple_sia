@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using simple_sia_connect.Classes.Abstract;
-using System.Threading.Tasks;
-using simple_sia_connect.Classes.JSON_Models;
-using System.Net.Http;
-using Newtonsoft.Json;
+﻿using simple_sia_connect.Classes.Abstract;
 
 namespace simple_sia_connect.Classes.Consensus
 {
     class ConsensusValidateTransactionSet: EndPointPostAbstract
     {
-        public override string Address { set => Address = "http://localhost:9980/consensus/validate/transactionset"; get => Address; }
+        public ConsensusValidateTransactionSet(string siaAddress) : base(siaAddress)
+        {
+        }
+
+        ConsensusValidateTransactionSet()
+        {
+            Address = "http://localhost:9980/consensus/validate/transactionset";
+        }
+        public override string Address { get; set; }
     }
 }

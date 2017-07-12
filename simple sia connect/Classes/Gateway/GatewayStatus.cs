@@ -16,7 +16,7 @@ namespace simple_sia_connect.Classes.Gateway
         }
         public GatewayStatus()
         {
-            Address = "http://localhost:9980/consensus";
+            Address = "http://localhost:9980/gateway";
         }
         public override async Task Connect(HttpClient client)
         {

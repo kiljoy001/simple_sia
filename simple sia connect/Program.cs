@@ -29,8 +29,10 @@ namespace simple_sia_connect
             test4.Connect(client).Wait();
             Console.WriteLine("Press key to continue");
             Console.ReadLine();
-            var test5 = new GatewayConnect("192.168.1.1", "localhost");
+            var test5 = new GatewayConnect("188.242.52.10:9981", "localhost:9980");
             test5.Post(client).Wait();
+            Console.WriteLine("Press key to continue");
+            Console.ReadLine();
         }
       
     }
