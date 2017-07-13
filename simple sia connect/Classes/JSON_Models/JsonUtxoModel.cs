@@ -8,8 +8,8 @@ namespace simple_sia_connect.Classes.JSON_Models
 {
     class JsonUtxoModel
     {
-        public List<SiaCoinInput> siacoininputs { get; set; }
-        public List<SiaCoinOutput> siacoinoutputs { get; set; }
+        public List<SiacoinInput> Siacoininputs { get; set; }
+        public List<SiacoinOutput> Siacoinoutputs { get; set; }
         public List<FileContract> filecontracts { get; set; }
         public List<FileContractRevision> filecontractrevisions { get; set; }
         public List<StorageProof> storageproofs { get; set; }

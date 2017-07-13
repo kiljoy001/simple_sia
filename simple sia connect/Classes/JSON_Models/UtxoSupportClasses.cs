@@ -5,17 +5,17 @@ using System.Collections.Generic;
 /* These are helper classes created in order to build the transaction UTXO json output for validating a transaction. It is currently UNTESTED and most likely very buggy with the wrong types for the fields. The class field names are all from the sia code base and should match up correctly.
  */
 
-public class SiaCoinInput
+public class SiacoinInput
 {
-	public SiaCoinInputID parentid { get; set; }
+	public SiacoinInputID parentid { get; set; }
     public UnlockConditions unlockconditions { get; set; }
 }
 
-public class SiaCoinInputID
+public class SiacoinInputID
 {
     public Hash data { get; set; }
 }
-public class SiaCoinOutput
+public class SiacoinOutput
 {
     public Currency value { get; set; }
     public UnlockHash unlockhash { get; set; }
@@ -45,8 +45,8 @@ public class FileContract
     public BlockHeight windowstart { get; set; }
     public BlockHeight windowend { get; set; }
     public Currency payout { get; set; }
-    public List<SiaCoinOutput> validproofoutputs { get; set; }
-    public List<SiaCoinOutput> missedproofoutputs { get; set; }
+    public List<SiacoinOutput> validproofoutputs { get; set; }
+    public List<SiacoinOutput> missedproofoutputs { get; set; }
     public UnlockHash unlockhash { get; set; }
     public Decimal revisionnumber { get; set; }
 }
@@ -70,8 +70,8 @@ public class FileContractRevision
     public Hash newmerkeleroot { get; set; }
     public BlockHeight newwindowstart { get; set; }
     public BlockHeight newwindowend { get; set; }
-    public List<SiaCoinOutput> newvalidproofoutputs { get; set; }
-    public List<SiaCoinOutput> newmissedproofoutputs { get; set; }
+    public List<SiacoinOutput> newvalidproofoutputs { get; set; }
+    public List<SiacoinOutput> newmissedproofoutputs { get; set; }
     public UnlockHash newunlockhash { get; set; }
 }
 
@@ -118,7 +118,7 @@ public class Currency
     public Decimal amount { get; set; }
 }
 
-public class SiaCoinOutputID
+public class SiacoinOutputID
 {
     public Hash data { get; set; }
 }
@@ -158,8 +158,8 @@ public class TransactionSignature
 public class CoveredFields
 {
     Boolean wholetransaction {get; set;}
-    Decimal[] siacoininputs {get; set;}
-    Decimal[] siacoinoutputs {get; set;}
+    Decimal[] Siacoininputs {get; set;}
+    Decimal[] Siacoinoutputs {get; set;}
     Decimal[] filecontracts {get; set;}
     Decimal[] filecontractrevision {get; set;}
     Decimal[] storageproofs {get; set;}
