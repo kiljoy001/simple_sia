@@ -9,13 +9,13 @@ namespace simple_sia_connect.Classes.Miner
     {
         public MinerStatus(string siaAddress) : base(siaAddress)
         {
+            Address=$"http://{siaAddress}/miner";
         }
 
         public MinerStatus()
         {
             Address = "http://localhost:9980/miner";
         }
-        public override string Address { set; get; }
 
         public override async Task Connect(HttpClient client)
         {
