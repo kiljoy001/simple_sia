@@ -9,6 +9,7 @@ namespace simple_sia_connect.Classes.Host_DB
     {
         public HostDBAll(string siaAddress) : base(siaAddress)
         {
+            Address = $"http://{siaAddress}/hostdb/all";
         }
 
         public HostDBAll()

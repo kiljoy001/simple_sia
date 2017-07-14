@@ -11,7 +11,7 @@ namespace simple_sia_connect.Classes.Host_DB
         {
             if (!String.IsNullOrEmpty(numhosts))
             {
-                Address = $"{siaAddress}";
+                Address = $"http://{siaAddress}";
             }
             else
             {
@@ -19,7 +19,7 @@ namespace simple_sia_connect.Classes.Host_DB
                 try
                 {
                     string numberValidatior = uint.Parse(numhosts).ToString();
-                    Address = $"{siaAddress}?={numberValidatior}";
+                    Address = $"http://{siaAddress}?={numberValidatior}";
                 }
                 catch { throw new ArgumentException(); }                
                 

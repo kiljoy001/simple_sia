@@ -11,6 +11,7 @@ namespace simple_sia_connect.Classes.Abstract
     {
         public DaemonStop(string siaAddress) : base(siaAddress)
         {
+            Address = $"http://{siaAddress}/daemon/stop";
         }
 
         public DaemonStop()

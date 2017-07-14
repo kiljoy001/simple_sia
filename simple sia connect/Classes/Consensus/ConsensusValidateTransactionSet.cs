@@ -6,6 +6,7 @@ namespace simple_sia_connect.Classes.Consensus
     {
         public ConsensusValidateTransactionSet(string siaAddress) : base(siaAddress)
         {
+            Address = $"http://{siaAddress}/consensus/validate/transactionset";
         }
 
         ConsensusValidateTransactionSet()

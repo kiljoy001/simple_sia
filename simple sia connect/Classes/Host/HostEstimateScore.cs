@@ -9,11 +9,12 @@ namespace simple_sia_connect.Classes.Host
     {
         public HostEstimateScore(string siaAddress) : base(siaAddress)
         {
+            Address = $"http://{siaAddress}/host/estimatescore";
         }
 
         public HostEstimateScore()
         {
-            Address = "http://localhost:9980/estimatescore";
+            Address = "http://localhost:9980/host/estimatescore";
         }
 
         public override string Address { get; set; }

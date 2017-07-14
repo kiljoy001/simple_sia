@@ -7,8 +7,9 @@ namespace simple_sia_connect.Classes.Daemon
 {
     public class DaemonConstants: EndPointConnectAbstract
     {
-        public DaemonConstants(string siaAddress) : base(siaAddress)
+        public DaemonConstants(string siaAddress)
         {
+            Address = $"http://{siaAddress}/daemon/constants";
         }
 
         public DaemonConstants()

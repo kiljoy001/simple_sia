@@ -11,11 +11,12 @@ namespace simple_sia_connect.Classes.Host
     {
         public HostStorage(string siaAddress)
         {
+            Address = $"http://{siaAddress}/host/storage";
         }
 
         public HostStorage()
         {
-            Address = "http://localhost:9980/estimatescore";
+            Address = "http://localhost:9980/host/storage";
         }
 
         public override string Address { get; set; }

@@ -9,6 +9,7 @@ namespace simple_sia_connect.Classes.Daemon
     {
         public DaemonVersion(string siaAddress) : base(siaAddress)
         {
+            Address = $"http://{siaAddress}/daemon/version";
         }
 
         public DaemonVersion()

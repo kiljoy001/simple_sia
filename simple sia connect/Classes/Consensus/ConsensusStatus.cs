@@ -8,8 +8,9 @@ namespace simple_sia_connect.Classes.Consensus
 {
     public class ConsensusStatus : EndPointConnectAbstract
     {
-        public ConsensusStatus(string siaAddress) : base(siaAddress)
+        public ConsensusStatus(string siaAddress)
         {
+            Address = $"http://{siaAddress}/consensus";
         }
 
         public ConsensusStatus()

@@ -9,6 +9,7 @@ namespace simple_sia_connect.Classes.Host
     {
         public GetHost(string siaAddress) : base(siaAddress)
         {
+            Address = $"http://{siaAddress}/host";
         }
 
         public GetHost()
