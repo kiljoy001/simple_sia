@@ -13,6 +13,5 @@ namespace simple_sia_connect.Classes.Consensus
         {
             Address = "http://localhost:9980/consensus/validate/transactionset";
         }
-        public override string Address { get; set; }
     }
 }

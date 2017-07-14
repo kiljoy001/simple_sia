@@ -7,7 +7,6 @@ namespace simple_sia_connect.Classes.Gateway
 {
     class GatewayStatus : EndPointConnectAbstract
     {
-        public override string Address { get; set; }
         public GatewayStatus(string siaAddress) : base(siaAddress)
         {
         }

@@ -12,8 +12,8 @@ namespace simple_sia_connect.Classes.Abstract
     public abstract class EndPointConnectAbstract : IEndPoint
     {
         //Decided to make this abstract since Sia is a realtively young project - in time they may chance the address or agent name. Also allows for customizable address & agent which are allowed in sia settings
-        public string Agent => "Sia-Agent";
-        public abstract string Address { get; set; }
+        protected string Agent => "Sia-Agent";
+        protected string Address { get; set; }
         //default constructor does not do anything except create the object, this can be overriden in implementation
         public EndPointConnectAbstract() { }
         public EndPointConnectAbstract(string siaAddress) { Address = $"http://{siaAddress}"; }

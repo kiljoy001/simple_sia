@@ -18,8 +18,7 @@ namespace simple_sia_connect.Classes.Abstract
         {
             Address = "http://localhost:9980/daemon/stop";
         }
-        public override string Address { set; get; }
-
+        
         public override async Task Connect(HttpClient client)
         {
             HttpResponseMessage response = await client.GetAsync(Address);

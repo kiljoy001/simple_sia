@@ -17,8 +17,6 @@ namespace simple_sia_connect.Classes.Host_DB
             Address = "http://localhost:9980/hostdb/all";
         }
 
-        public override string Address { get; set; }
-
         public override async Task Connect(HttpClient client)
         {
             client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);

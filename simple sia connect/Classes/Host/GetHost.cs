@@ -17,8 +17,6 @@ namespace simple_sia_connect.Classes.Host
             Address = "http://localhost:9980/host";
         }
 
-        public override string Address { get; set; }
-
         public override async Task Connect(HttpClient client)
         {
             client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);

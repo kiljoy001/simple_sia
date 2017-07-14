@@ -9,8 +9,8 @@ namespace simple_sia_connect.Classes.Abstract
 {
     public abstract class EndPointPostAbstract:IEndPoint
     {
-        public string Agent => "Sia-Agent";
-        public abstract string Address { set;  get; }
+        protected string Agent => "Sia-Agent";
+        protected string Address { set;  get; }
         //Constructors
         public EndPointPostAbstract() { }
         public EndPointPostAbstract(string siaAddress) { Address = $"http://{siaAddress}"; }
