@@ -19,16 +19,17 @@ namespace simple_sia_connect.Classes.Abstract
             Address = "http://localhost:9980/daemon/stop";
         }
         
-        public override async Task Connect(HttpClient client)
+        public override async Task<string> Connect(HttpClient client)
         {
             HttpResponseMessage response = await client.GetAsync(Address);
+            string response_data = response.RequestMessage.ToString();
             if (response.IsSuccessStatusCode)
             {
-                Console.WriteLine($"Success - Status Code: {response.Content.ToString()}");
+                return $"Success - Response Message: {response_data}";
             }
             else
             {
-                Console.WriteLine($"Failure - Status Code: {response.StatusCode.ToString()}");
+                return $"Failure - Response Message: {response_data}";
             }
         }
     }

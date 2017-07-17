@@ -20,7 +20,7 @@ namespace simple_sia_connect.Classes.Miner
         public override async Task Connect(HttpClient client)
         {
             //TODO add a json response handler to relay if command was successful or not.
-            client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);
+             
             var returnValue = client.GetStringAsync(Address);
             var msg = await returnValue;
             Console.WriteLine(msg);

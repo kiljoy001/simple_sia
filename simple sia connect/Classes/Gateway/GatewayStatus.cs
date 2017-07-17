@@ -16,7 +16,7 @@ namespace simple_sia_connect.Classes.Gateway
         }
         public override async Task Connect(HttpClient client)
         {
-            client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);
+            // 
             var returnValue = client.GetStringAsync(Address);
             var msg = await returnValue;
             Console.WriteLine(msg);
