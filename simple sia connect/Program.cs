@@ -17,8 +17,11 @@ namespace simple_sia_connect
         public static HttpClient client = new HttpClient();
         static void Main(string[] args)
         {
+            //Client base address
             client.BaseAddress = new Uri("http://localhost:9980");
             var test = new DaemonConstants();
+            //Adds the user agent "Sia-Agent" which is used for connecting to the 
+            client.DefaultRequestHeaders.UserAgent.ParseAdd(test.Agent);
             test.Connect(client).Wait();
             Console.WriteLine("Press key to continue");
             Console.ReadLine();

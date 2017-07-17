@@ -2,8 +2,6 @@
 using System.Net.Http;
 using Newtonsoft.Json;
 using System;
-using System.Text;
-using simple_sia_connect.Classes.JSON_Models;
 
 namespace simple_sia_connect.Classes.Abstract
 {
@@ -15,15 +13,21 @@ namespace simple_sia_connect.Classes.Abstract
         public EndPointPostAbstract() { }
         public EndPointPostAbstract(string siaAddress) { Address = $"http://{siaAddress}"; }
         //inject client & object model into method
-        public async Task Post(HttpClient client, Object data)
+        public async Task<string> Post(HttpClient client, Object data)
         {
-            var result = client.PostAsync(Address, new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"));
-            HttpResponseMessage response = await result;
-            //TODO this code does not return the actuall message - it appears to be a json object
-            string returncode = response.StatusCode.ToString();
-
-            if (response.IsSuccessStatusCode) { Console.WriteLine($"Success - Response Message: {returncode}\n"); }
-            else { Console.WriteLine($"Failure - Response Message: {returncode}\n"); }
+            //This method is not to be used for objects that can be null i.e. no object passed.
+            string seralized_object = JsonConvert.SerializeObject(data);
+            if(!String.IsNullOrEmpty(seralized_object))
+            {
+                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, seralized_object);
+                HttpResponseMessage response = await client.SendAsync(request);
+                string returncode = response.RequestMessage.ToString();
+                //error or success reporting
+                if (response.IsSuccessStatusCode) return $"Success - Response Message: {returncode}\n";
+                else return $"Failure - Response Message: {returncode}\n";
+            }
+            else { throw new NullReferenceException(); }
+            
         }
     }
 }

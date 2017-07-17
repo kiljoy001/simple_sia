@@ -2,7 +2,7 @@
 using Blake2Core;
 using System.Collections.Generic;
 
-/* These are helper classes created in order to build the transaction UTXO json output for validating a transaction. It is currently UNTESTED and most likely very buggy with the wrong types for the fields. The class field names are all from the sia code base and should match up correctly.
+/* These are helper classes created in order to build the transaction UTXO json output for validating a transaction. It is currently UNTESTED and most likely very buggy with the wrong types for the fields. The class field names are all from the sia code base and should match up correctly, with the exception of the field called data.
  */
 
 public class SiacoinInput
@@ -125,7 +125,7 @@ public class SiacoinOutputID
 
 public class SegmentSize
 {
-    public string data { get; set; }
+    public uint data { get; set; }
 }
 
 public class Segment
@@ -135,7 +135,7 @@ public class Segment
     public Segment(SegmentSize size)
     {
         _size = size;
-        data = new byte[int.Parse(_size.data)];
+        data = new byte[_size.data];
     }
 }
 

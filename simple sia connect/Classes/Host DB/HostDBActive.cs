@@ -31,12 +31,12 @@ namespace simple_sia_connect.Classes.Host_DB
             Address = "http://localhost:9980/estimatescore";
         }
 
-        public override async Task Connect(HttpClient client)
+        public override async Task<string> Connect(HttpClient client)
         {
              
             var returnValue = client.GetStringAsync(Address);
             var msg = await returnValue;
-            Console.WriteLine(msg);
+            return msg;
         }
     }
 }
