@@ -13,13 +13,14 @@ namespace simple_sia_connect.Classes.Abstract
         public EndPointPostAbstract() { }
         public EndPointPostAbstract(string siaAddress) { Address = $"http://{siaAddress}"; }
         //inject client & object model into method
-        public async Task<string> Post(HttpClient client, Object data)
+        public async Task<string> Post(HttpClient client, Object data, string end_point_address)
         {
-            //This method is not to be used for objects that can be null i.e. no object passed.
+            //This method is not to be used for objects that can be null i.e. no object passed. Also by default it sends a string value that is encoded as json
             string seralized_object = JsonConvert.SerializeObject(data);
             if(!String.IsNullOrEmpty(seralized_object))
             {
-                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, seralized_object);
+                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, end_point_address);
+                request.Content = new StringContent(seralized_object);
                 HttpResponseMessage response = await client.SendAsync(request);
                 string returncode = response.RequestMessage.ToString();
                 //error or success reporting
