@@ -11,21 +11,20 @@ namespace simple_sia_connect.Classes.Host
     {
         public HostStorage(string siaAddress)
         {
+            Address = $"http://{siaAddress}/host/storage";
         }
 
         public HostStorage()
         {
-            Address = "http://localhost:9980/estimatescore";
+            Address = "http://localhost:9980/host/storage";
         }
 
-        public override string Address { get; set; }
-
-        public override async Task Connect(HttpClient client)
+        public override async Task<string> Connect(HttpClient client)
         {
-            client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);
+             
             var returnValue = client.GetStringAsync(Address);
             var msg = await returnValue;
-            Console.WriteLine(msg);
+            return msg;
         }
     }
 }

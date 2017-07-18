@@ -9,20 +9,20 @@ namespace simple_sia_connect.Classes.Daemon
     {
         public DaemonVersion(string siaAddress) : base(siaAddress)
         {
+            Address = $"http://{siaAddress}/daemon/version";
         }
 
         public DaemonVersion()
         {
             Address = "http://localhost:9980/daemon/version";
         }
-        public override string Address { set; get; }
 
-        public override async Task Connect(HttpClient client)
+        public override async Task<string> Connect(HttpClient client)
         {
-            client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);
+             
             var returnValue = client.GetStringAsync(Address);
-            var msg = await returnValue;
-            Console.WriteLine(msg);
+            string msg = await returnValue;
+            return msg;
         }
     }
 }

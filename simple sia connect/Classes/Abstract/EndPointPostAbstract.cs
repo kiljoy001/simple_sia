@@ -2,29 +2,33 @@
 using System.Net.Http;
 using Newtonsoft.Json;
 using System;
-using System.Text;
-using simple_sia_connect.Classes.JSON_Models;
 
 namespace simple_sia_connect.Classes.Abstract
 {
     public abstract class EndPointPostAbstract:IEndPoint
     {
-        public string Agent => "Sia-Agent";
-        public abstract string Address { set;  get; }
+         
+        public string Address { set;  get; }
         //Constructors
         public EndPointPostAbstract() { }
         public EndPointPostAbstract(string siaAddress) { Address = $"http://{siaAddress}"; }
         //inject client & object model into method
-        public async Task Post(HttpClient client, Object data)
+        public async Task<string> Post(HttpClient client, Object data, string end_point_address)
         {
-            client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);
-            var result = client.PostAsync(Address, new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"));
-            HttpResponseMessage response = await result;
-            //TODO this code does not return the actuall message - it appears to be a json object
-            string returncode = response.StatusCode.ToString();
-
-            if (response.IsSuccessStatusCode) { Console.WriteLine($"Success - Status Code: {returncode}\n"); }
-            else { Console.WriteLine($"Failure - Status Code: {returncode}\n"); }
+            //This method is not to be used for objects that can be null i.e. no object passed. Also by default it sends a string value that is encoded as json
+            string seralized_object = JsonConvert.SerializeObject(data);
+            if(!String.IsNullOrEmpty(seralized_object))
+            {
+                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, end_point_address);
+                request.Content = new StringContent(seralized_object);
+                HttpResponseMessage response = await client.SendAsync(request);
+                string returncode = response.RequestMessage.ToString();
+                //error or success reporting
+                if (response.IsSuccessStatusCode) return $"Success - Response Message: {returncode}\n";
+                else return $"Failure - Response Message: {returncode}\n";
+            }
+            else { throw new NullReferenceException(); }
+            
         }
     }
 }

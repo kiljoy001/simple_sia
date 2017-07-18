@@ -5,7 +5,11 @@
     "\\simple sia connect\\Classes",
     "\\simple sia connect\\Classes\\Abstract",
     "\\simple sia connect\\Classes\\Consensus",
-    "\\simple sia connect\\Classes\\Daemon"
+    "\\simple sia connect\\Classes\\Gateway",
+    "\\simple sia connect\\Classes\\Host",
+    "\\simple sia connect\\Classes\\Host DB",
+    "\\simple sia connect\\Classes\\JSON_Models",
+    "\\simple sia connect\\Classes\\Miner"
   ],
   "SelectedNode": "\\simple sia connect.sln",
   "PreviewInSolutionExplorer": false

@@ -9,6 +9,7 @@ namespace simple_sia_connect.Classes.Host
     {
         public GetHost(string siaAddress) : base(siaAddress)
         {
+            Address = $"http://{siaAddress}/host";
         }
 
         public GetHost()
@@ -16,14 +17,12 @@ namespace simple_sia_connect.Classes.Host
             Address = "http://localhost:9980/host";
         }
 
-        public override string Address { get; set; }
-
-        public override async Task Connect(HttpClient client)
+        public override async Task<string> Connect(HttpClient client)
         {
-            client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);
+             
             var returnValue = client.GetStringAsync(Address);
             var msg = await returnValue;
-            Console.WriteLine(msg);
+            return msg;
         }
     }
 }

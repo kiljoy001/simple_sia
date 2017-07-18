@@ -7,22 +7,22 @@ namespace simple_sia_connect.Classes.Daemon
 {
     public class DaemonConstants: EndPointConnectAbstract
     {
-        public DaemonConstants(string siaAddress) : base(siaAddress)
+        public DaemonConstants(string siaAddress)
         {
+            Address = $"http://{siaAddress}/daemon/constants";
         }
 
         public DaemonConstants()
         {
             Address = "http://localhost:9980/daemon/constants";
         }
-        public override string Address { set; get; }
 
-        public override async Task Connect(HttpClient client)
+        public override async Task<string> Connect(HttpClient client)
         {
-            client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);
+             
             var returnValue = client.GetStringAsync(Address);
             var msg = await returnValue;
-            Console.WriteLine(msg);
+            return msg.ToString();
         }
         
     }

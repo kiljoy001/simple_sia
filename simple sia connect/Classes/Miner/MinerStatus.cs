@@ -9,20 +9,20 @@ namespace simple_sia_connect.Classes.Miner
     {
         public MinerStatus(string siaAddress) : base(siaAddress)
         {
+            Address=$"http://{siaAddress}/miner";
         }
 
         public MinerStatus()
         {
             Address = "http://localhost:9980/miner";
         }
-        public override string Address { set; get; }
 
-        public override async Task Connect(HttpClient client)
+        public override async Task<string> Connect(HttpClient client)
         {
-            client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);
+             
             var returnValue = client.GetStringAsync(Address);
             var msg = await returnValue;
-            Console.WriteLine(msg);
+            return msg;
         }
     }
 }

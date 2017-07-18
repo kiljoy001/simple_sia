@@ -8,15 +8,14 @@ namespace simple_sia_connect.Classes.Gateway
 {
     class GatewayConnect:EndPointPostAbstract
     {
-        public override string Address { set; get;}
+
         private string _netaddress { get; set; }
-        Match ip;
+        private string filter = @"^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])\:\d{1,5}$";
 
         GatewayConnect(string netaddress)
         {
             //regex matches for 1 to 3 digits with period seperator, will throw exception if ip address is not valid. Addresses need to have port numbers as well.
-            ip = Regex.Match(netaddress, @"^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])\:\d{1,5}$");
-            if (ip.Success)
+            if (this.IsValidNetAddress(netaddress))
             {
                 Address = $"http://localhost:9980/gateway/connect/{netaddress}";
             }
@@ -27,10 +26,9 @@ namespace simple_sia_connect.Classes.Gateway
         }
         public GatewayConnect(string netaddress, string siaAddress)
         {
-            Address = $"http://{siaAddress}/gateway/connect/:";
+            Address = null;
             //regex matches for 1 to 3 digits with period seperator, will throw exception if ip address is not valid  Addresses need to have port numbers as well.
-            ip = Regex.Match(netaddress, @"^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])\:\d{1,5}$");
-            if (ip.Success)
+            if (this.IsValidNetAddress(netaddress))
             {
                 _netaddress = netaddress;
                 Address = $"http://{siaAddress}/gateway/connect/{_netaddress}";
@@ -40,17 +38,23 @@ namespace simple_sia_connect.Classes.Gateway
                 throw new ArgumentException();
             }
         }
+
+        private bool IsValidNetAddress(string input)
+        {
+            return Regex.Match(input, filter).Success;
+        }
+
         public async Task Post(HttpClient client)
         {
-            client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);
+            // 
             if (_netaddress != null && Address != null)
             {
                 HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, $"/gateway/connect/{_netaddress}");
                 HttpResponseMessage response = await client.SendAsync(request);
-                string returncode = response.StatusCode.ToString();
+                string returncode = response.RequestMessage.ToString();
                 //error or success reporting
-                if (response.IsSuccessStatusCode) { Console.WriteLine($"Success - Status Code: {returncode}\n"); }
-                else { Console.WriteLine($"Failure - Status Code: {returncode}\n"); }
+                if (response.IsSuccessStatusCode) { Console.WriteLine($"Success - Response Message: {returncode}\n"); }
+                else { Console.WriteLine($"Failure - Response Message: {returncode}\n"); }
             }
            
         }

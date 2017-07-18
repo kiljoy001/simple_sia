@@ -8,8 +8,9 @@ namespace simple_sia_connect.Classes.Consensus
 {
     public class ConsensusStatus : EndPointConnectAbstract
     {
-        public ConsensusStatus(string siaAddress) : base(siaAddress)
+        public ConsensusStatus(string siaAddress)
         {
+            Address = $"http://{siaAddress}/consensus";
         }
 
         public ConsensusStatus()
@@ -17,14 +18,11 @@ namespace simple_sia_connect.Classes.Consensus
             Address = "http://localhost:9980/consensus";
         }
 
-        public override string Address { get; set; }
-
-        public override async Task Connect(HttpClient client)
+        public override async Task<string> Connect(HttpClient client)
         {
-            client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);
             var returnValue = client.GetStringAsync(Address);
-            var msg = await returnValue;
-            Console.WriteLine(msg);
+            string msg = await returnValue;
+            return msg;
         }
 
     }

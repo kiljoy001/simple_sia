@@ -11,7 +11,7 @@ namespace simple_sia_connect.Classes.Host_DB
         {
             if (!String.IsNullOrEmpty(numhosts))
             {
-                Address = $"{siaAddress}";
+                Address = $"http://{siaAddress}";
             }
             else
             {
@@ -19,7 +19,7 @@ namespace simple_sia_connect.Classes.Host_DB
                 try
                 {
                     string numberValidatior = uint.Parse(numhosts).ToString();
-                    Address = $"{siaAddress}?={numberValidatior}";
+                    Address = $"http://{siaAddress}?={numberValidatior}";
                 }
                 catch { throw new ArgumentException(); }                
                 
@@ -31,14 +31,12 @@ namespace simple_sia_connect.Classes.Host_DB
             Address = "http://localhost:9980/estimatescore";
         }
 
-        public override string Address { get; set; }
-
-        public override async Task Connect(HttpClient client)
+        public override async Task<string> Connect(HttpClient client)
         {
-            client.DefaultRequestHeaders.UserAgent.ParseAdd(Agent);
+             
             var returnValue = client.GetStringAsync(Address);
             var msg = await returnValue;
-            Console.WriteLine(msg);
+            return msg;
         }
     }
 }
