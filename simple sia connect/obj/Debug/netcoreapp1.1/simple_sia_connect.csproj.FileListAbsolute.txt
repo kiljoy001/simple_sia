@@ -1,9 +1,0 @@
-C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\bin\Debug\netcoreapp1.1\simple_sia_connect.deps.json
-C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\bin\Debug\netcoreapp1.1\simple_sia_connect.runtimeconfig.json
-C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\bin\Debug\netcoreapp1.1\simple_sia_connect.runtimeconfig.dev.json
-C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\bin\Debug\netcoreapp1.1\simple_sia_connect.dll
-C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\obj\Debug\netcoreapp1.1\simple_sia_connect.csprojResolveAssemblyReference.cache
-C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\obj\Debug\netcoreapp1.1\simple_sia_connect.AssemblyInfo.cs
-C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\bin\Debug\netcoreapp1.1\simple_sia_connect.pdb
-C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\obj\Debug\netcoreapp1.1\simple_sia_connect.dll
-C:\Users\Scott\Source\Repos\simple_sia\simple sia connect\obj\Debug\netcoreapp1.1\simple_sia_connect.pdb
