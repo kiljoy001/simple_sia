@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace simple_sia_connect.Classes.JSON_Models
 {
-    class JsonUtxoModel
+    class Transaction
     {
         public List<SiacoinInput> Siacoininputs { get; set; }
         public List<SiacoinOutput> Siacoinoutputs { get; set; }

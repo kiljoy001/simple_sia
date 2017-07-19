@@ -1,6 +1,7 @@
 ﻿using System;
 using Blake2Core;
 using System.Collections.Generic;
+using simple_sia_connect.Classes.JSON_Models;
 
 /* These are helper classes created in order to build the transaction UTXO json output for validating a transaction. It is currently UNTESTED and most likely very buggy with the wrong types for the fields. The class field names are all from the sia code base and should match up correctly, with the exception of the field called data.
  */
@@ -170,3 +171,41 @@ public class CoveredFields
     Decimal[] transactionsignatures {get; set;}
 }
 
+public class Block
+{
+    BlockID parentid { get; set; }
+    BlockNonce nonce { get; set; }
+    Timestamp timestamp { get; set; }
+    SiacoinOutput[] minerpayouts { get; set; }
+    Transaction[] transactions { get; set; }
+}
+
+public class BlockID
+{
+    Hash ID { get; set; }
+}
+
+public class BlockNonce
+{
+    byte[] data { get; set; }
+    private const int nonce_size = 8;
+    public byte[] Array()
+    {
+        return new byte[nonce_size];
+    }
+}
+
+public class Timestamp
+{
+    Decimal stamp { get; set; }
+    public Decimal CurrentTimestamp()
+    {
+        return (Decimal)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+    }
+
+}
+
+public class TimestampSlice
+{
+    Timestamp[] data { get; set; }
+}
