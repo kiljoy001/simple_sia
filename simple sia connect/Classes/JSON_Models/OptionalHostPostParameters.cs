@@ -7,7 +7,7 @@ namespace simple_sia_connect.Classes.JSON_Models
 {
     class OptionalHostPostParameters
     {
-        bool acceptingcontracts { get; set; }
+        bool? acceptingcontracts { get; set; }
         byte maxdownloadbatchsize { get; set; }
         Block maxduration { get; set; }
         byte maxrevisebatchsize { get; set; }

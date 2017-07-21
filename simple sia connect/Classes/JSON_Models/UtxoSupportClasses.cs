@@ -209,3 +209,32 @@ public class TimestampSlice
 {
     Timestamp[] data { get; set; }
 }
+
+///For the /host[POST] command
+///helper class for containing the values needed for posting for the commands that require more than value
+
+public class Collateral
+{
+    Decimal hastings { get; set; }
+    Byte size { get; set; }
+    Block block { get; set; }
+}
+
+public class MinDownloadBandwidthPrice
+{
+    Decimal hasting { get; set; }
+    Byte size { get; set; }
+}
+
+public class MinStoragePrice
+{
+    Decimal hastings { get; set; }
+    Byte size { get; set; }
+    Block block { get; set; }
+}
+
+public class MinUploadBandwidthPrice
+{
+    Decimal hasting { get; set; }
+    Byte size { get; set; }
+}
