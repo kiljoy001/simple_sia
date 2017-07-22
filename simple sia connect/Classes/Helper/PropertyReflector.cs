@@ -19,7 +19,7 @@ namespace simple_sia_connect.Classes.Helper
             foreach (PropertyInfo pi in ListAll)
             {
                 name = pi.Name;
-                inputed_object = pi.GetValue(subject, null);
+                inputed_object = pi.GetValue(pi, null);
                 ReturnValue.Add(name, inputed_object);
             }
         }
