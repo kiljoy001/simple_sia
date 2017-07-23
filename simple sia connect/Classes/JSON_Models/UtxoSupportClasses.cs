@@ -238,3 +238,15 @@ public class MinUploadBandwidthPrice
     Decimal hasting { get; set; }
     Byte size { get; set; }
 }
+
+public class HostStorageFoldersAddOption
+{
+    String path { get; set; }
+    Byte size { get; set; }
+}
+
+public class HostStorageFoldersRemoveOption
+{
+    String path { get; set; }
+    Boolean force { get; set; } = false;
+}
