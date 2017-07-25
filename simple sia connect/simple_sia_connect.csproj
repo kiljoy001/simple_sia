@@ -9,7 +9,6 @@
     <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\Renter" />
     <Folder Include="Classes\Transaction Pool" />
     <Folder Include="Classes\Wallet" />
   </ItemGroup>
