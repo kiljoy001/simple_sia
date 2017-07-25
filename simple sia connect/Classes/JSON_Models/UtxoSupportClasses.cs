@@ -250,3 +250,9 @@ public class HostStorageFoldersRemoveOption
     String path { get; set; }
     Boolean force { get; set; } = false;
 }
+
+public class HostStorageFoldersResizeOption
+{
+    String path { get; set; }
+    Byte newsize { get; set; }
+}
