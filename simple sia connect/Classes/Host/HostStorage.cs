@@ -19,12 +19,5 @@ namespace simple_sia_connect.Classes.Host
             Address = "http://localhost:9980/host/storage";
         }
 
-        public override async Task<string> Connect(HttpClient client)
-        {
-             
-            var returnValue = client.GetStringAsync(Address);
-            var msg = await returnValue;
-            return msg;
-        }
     }
 }

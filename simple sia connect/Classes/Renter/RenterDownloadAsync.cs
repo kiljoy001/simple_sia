@@ -16,7 +16,8 @@ namespace simple_sia_connect.Classes.Renter
 
         public RenterDownloadAsync(string path)
         {
-            Address = $"http://localhost:9980/renter/downloadasync/{path}";
+            Address 
+                = $"http://localhost:9980/renter/downloadasync/{path}";
         }
 
         public override async Task<string> Connect(HttpClient client)

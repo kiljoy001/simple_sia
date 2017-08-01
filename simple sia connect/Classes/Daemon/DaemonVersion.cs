@@ -17,12 +17,5 @@ namespace simple_sia_connect.Classes.Daemon
             Address = "http://localhost:9980/daemon/version";
         }
 
-        public override async Task<string> Connect(HttpClient client)
-        {
-             
-            var returnValue = client.GetStringAsync(Address);
-            string msg = await returnValue;
-            return msg;
-        }
     }
 }

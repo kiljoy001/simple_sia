@@ -16,6 +16,11 @@ namespace simple_sia_connect.Classes.Abstract
         public EndPointConnectAbstract() { }
         public EndPointConnectAbstract(string siaAddress) { Address = $"http://{siaAddress}"; }
         //Each subclass should always have a connect method
-        public abstract Task<string> Connect(HttpClient client);
+        public async Task<string> Connect(HttpClient client)
+        {
+            var returnValue = client.GetStringAsync(Address);
+            string msg = await returnValue;
+            return msg;
+        }
     }
 }

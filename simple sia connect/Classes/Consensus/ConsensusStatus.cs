@@ -18,12 +18,5 @@ namespace simple_sia_connect.Classes.Consensus
             Address = "http://localhost:9980/consensus";
         }
 
-        public override async Task<string> Connect(HttpClient client)
-        {
-            var returnValue = client.GetStringAsync(Address);
-            string msg = await returnValue;
-            return msg;
-        }
-
     }
 }

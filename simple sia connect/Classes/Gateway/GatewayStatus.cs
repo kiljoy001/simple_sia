@@ -10,16 +10,11 @@ namespace simple_sia_connect.Classes.Gateway
         public GatewayStatus(string siaAddress) : base(siaAddress)
         {
         }
+
         public GatewayStatus()
         {
             Address = "http://localhost:9980/gateway";
         }
-        public override async Task<string> Connect(HttpClient client)
-        {
-            // 
-            var returnValue = client.GetStringAsync(Address);
-            var msg = await returnValue;
-            return msg;
-        }
+        
     }
 }

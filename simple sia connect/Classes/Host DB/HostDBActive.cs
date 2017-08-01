@@ -11,7 +11,7 @@ namespace simple_sia_connect.Classes.Host_DB
         {
             if (!String.IsNullOrEmpty(numhosts))
             {
-                Address = $"http://{siaAddress}";
+                Address = $"http://{siaAddress}/hostdb/active";
             }
             else
             {
@@ -28,15 +28,7 @@ namespace simple_sia_connect.Classes.Host_DB
 
         public HostDBActive()
         {
-            Address = "http://localhost:9980/estimatescore";
-        }
-
-        public override async Task<string> Connect(HttpClient client)
-        {
-             
-            var returnValue = client.GetStringAsync(Address);
-            var msg = await returnValue;
-            return msg;
+            Address = "http://localhost:9980/hostdb/active";
         }
     }
 }
