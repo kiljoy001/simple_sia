@@ -9,7 +9,12 @@ namespace simple_sia_connect.Classes.Wallet
     {
         public WalletUnlock()
         {
+            Address = "http://localhost:9980/wallet/unlock";
+        }
 
+        public WalletUnlock(string siaAddress) : base(siaAddress)
+        {
+            Address = $"http://{siaAddress}/wallet/unlock";
         }
     }
 }
