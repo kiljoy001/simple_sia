@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using simple_sia_connect.Classes.Abstract;
+using simple_sia_library.Classes.Abstract;
 using System.Threading.Tasks;
 using System.Net.Http;
 
-namespace simple_sia_connect.Classes.Renter
+namespace simple_sia_library.Classes.Renter
 {
     class RenterContracts : EndPointConnectAbstract
     {

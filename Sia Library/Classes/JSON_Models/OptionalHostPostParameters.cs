@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 //Json class object to be used for /host[POST] command (PostHost).
-namespace simple_sia_connect.Classes.JSON_Models
+namespace simple_sia_library.Classes.JSON_Models
 {
     class OptionalHostPostParameters
     {

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>RentonSoftworks.SimpleSia.SiaLibrary</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>kiljoy001</authors>
+    <owners>kiljoy001</owners>
+    <projectUrl>https://github.com/kiljoy001/simple_sia</projectUrl>
+    <iconUrl>http://sia.tech/img/svg/sia-green-logo.svg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# library for easy use of the Sia daemon. Includes all http api endpoints</description>
+    <releaseNotes>This the initial alpha release, somethings may not work correctly. Please submit bugs at the github page.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Storage Decentralized Storage-api</tags>
+  </metadata>
+</package>

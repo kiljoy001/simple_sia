@@ -3,9 +3,9 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using simple_sia_connect.Classes.Helper;
+using simple_sia_library.Classes.Helper;
 
-namespace simple_sia_connect.Classes.Abstract
+namespace simple_sia_library.Classes.Abstract
 {
     public abstract class EndPointPostAbstract : IEndPoint
     {

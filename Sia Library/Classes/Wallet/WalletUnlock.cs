@@ -1,9 +1,9 @@
-﻿using simple_sia_connect.Classes.Abstract;
+﻿using simple_sia_library.Classes.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace simple_sia_connect.Classes.Wallet
+namespace simple_sia_library.Classes.Wallet
 {
     class WalletUnlock : EndPointPostAbstract
     {

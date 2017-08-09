@@ -5,7 +5,7 @@ using System.Reflection;
 /// <summary>
 /// This class has a dictionary property that will return the name of the field and the object associated with it. It uses reflection to get the name and object. 
 /// </summary>
-namespace simple_sia_connect.Classes.Helper
+namespace simple_sia_library.Classes.Helper
 {
     public class PropertyReflector
     {

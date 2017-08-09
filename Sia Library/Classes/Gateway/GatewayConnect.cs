@@ -1,10 +1,10 @@
-﻿using simple_sia_connect.Classes.Abstract;
+﻿using simple_sia_library.Classes.Abstract;
 using System;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace simple_sia_connect.Classes.Gateway
+namespace simple_sia_library.Classes.Gateway
 {
     class GatewayConnect:EndPointPostAbstract
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using simple_sia_connect.Classes.Abstract;
+using simple_sia_library.Classes.Abstract;
 
-namespace simple_sia_connect.Classes.Renter
+namespace simple_sia_library.Classes.Renter
 {
     class RenterStatus : EndPointConnectAbstract
     {

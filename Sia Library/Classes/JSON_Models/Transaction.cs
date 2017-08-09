@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace simple_sia_connect.Classes.JSON_Models
+namespace simple_sia_library.Classes.JSON_Models
 {
     class Transaction
     {

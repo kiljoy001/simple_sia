@@ -5,7 +5,7 @@ This abstract class was created to make http GET connections easy. It implements
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace simple_sia_connect.Classes.Abstract
+namespace simple_sia_library.Classes.Abstract
 {
     public abstract class EndPointConnectAbstract : IEndPoint
     {

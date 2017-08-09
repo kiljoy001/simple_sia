@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
-using simple_sia_connect.Classes.Abstract;
+using simple_sia_library.Classes.Abstract;
 
-namespace simple_sia_connect.Classes.Host
+namespace simple_sia_library.Classes.Host
 {
     class HostStorage : EndPointConnectAbstract
     {

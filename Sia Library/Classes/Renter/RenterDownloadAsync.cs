@@ -1,11 +1,11 @@
-﻿using simple_sia_connect.Classes.Abstract;
+﻿using simple_sia_library.Classes.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace simple_sia_connect.Classes.Renter
+namespace simple_sia_library.Classes.Renter
 {
     class RenterDownloadAsync :EndPointConnectAbstract
     {

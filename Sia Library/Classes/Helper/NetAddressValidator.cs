@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 //TODO Create validator helper class, seems to be needed more than once. Once complete simpify GatewayConnect to use the new class.
-namespace simple_sia_connect.Classes.Helper
+namespace simple_sia_library.Classes.Helper
 {
     class NetAddressValidator
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Blake2Core;
 using System.Collections.Generic;
-using simple_sia_connect.Classes.JSON_Models;
+using simple_sia_library.Classes.JSON_Models;
 
 /* These are helper classes created in order to build the transaction UTXO json output for validating a transaction. It is currently UNTESTED and most likely very buggy with the wrong types for the fields. The class field names are all from the sia code base and should match up correctly, with the exception of the field called data.
  */

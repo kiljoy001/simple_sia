@@ -1,6 +1,6 @@
-﻿using simple_sia_connect.Classes.Abstract;
+﻿using simple_sia_library.Classes.Abstract;
 
-namespace simple_sia_connect.Classes.Consensus
+namespace simple_sia_library.Classes.Consensus
 {
     class ConsensusValidateTransactionSet: EndPointPostAbstract
     {

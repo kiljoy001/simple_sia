@@ -1,9 +1,9 @@
-﻿using simple_sia_connect.Classes.Abstract;
+﻿using simple_sia_library.Classes.Abstract;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace simple_sia_connect.Classes.Miner
+namespace simple_sia_library.Classes.Miner
 {
     class MinerStart : EndPointConnectAbstract
     {

@@ -1,12 +1,12 @@
-﻿using simple_sia_connect.Classes.Abstract;
-using simple_sia_connect.Classes.Helper;
+﻿using simple_sia_library.Classes.Abstract;
+using simple_sia_library.Classes.Helper;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace simple_sia_connect.Classes.Host
+namespace simple_sia_library.Classes.Host
 {
     class HostAnnounce : EndPointPostAbstract
     {
