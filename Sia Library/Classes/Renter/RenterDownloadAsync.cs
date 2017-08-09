@@ -19,12 +19,5 @@ namespace simple_sia_connect.Classes.Renter
             Address 
                 = $"http://localhost:9980/renter/downloadasync/{path}";
         }
-
-        public new async Task<string> Connect(HttpClient client)
-        {
-            var returnValue = client.GetStringAsync(Address);
-            string msg = await returnValue;
-            return msg;
-        }
     }
 }

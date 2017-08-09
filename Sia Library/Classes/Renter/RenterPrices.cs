@@ -7,23 +7,17 @@ using System.Threading.Tasks;
 
 namespace simple_sia_connect.Classes.Renter
 {
-    class RenterFiles : EndPointConnectAbstract
+    class RenterPrices : EndPointConnectAbstract
     {
-        public RenterFiles(string siaAddress)
+        public RenterPrices(string siaAddress)
         {
             Address = $"http://{siaAddress}/renter";
         }
 
-        public RenterFiles()
+        public RenterPrices()
         {
             Address = "http://localhost:9980/renter";
         }
 
-        public new async Task<string> Connect(HttpClient client)
-        {
-            var returnValue = client.GetStringAsync(Address);
-            string msg = await returnValue;
-            return msg;
-        }
     }
 }

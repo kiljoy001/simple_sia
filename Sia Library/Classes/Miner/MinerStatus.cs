@@ -16,13 +16,5 @@ namespace simple_sia_connect.Classes.Miner
         {
             Address = "http://localhost:9980/miner";
         }
-
-        public new async Task<string> Connect(HttpClient client)
-        {
-             
-            var returnValue = client.GetStringAsync(Address);
-            var msg = await returnValue;
-            return msg;
-        }
     }
 }

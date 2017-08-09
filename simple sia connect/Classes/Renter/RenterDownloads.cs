@@ -19,7 +19,7 @@ namespace simple_sia_connect.Classes.Renter
             Address = "http://localhost:9980/renter";
         }
 
-        public override async Task<string> Connect(HttpClient client)
+        public new async Task<string> Connect(HttpClient client)
         {
             var returnValue = client.GetStringAsync(Address);
             string msg = await returnValue;
