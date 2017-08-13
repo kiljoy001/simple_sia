@@ -1,3 +1,3 @@
-simple sia connect
+Documentation
 
-This is a console application to test connecting to the library that I am authoring. Once done, I will create a PCL and publish it to nuget.
+The library emulates the API commands found here. On that page, you will find the expected inputs for each command.  I have also created some helper objects in the Helper & JSON_Models folder. Each class should be appropriately named – for example NetAddressValidator validates network addresses. In UtxoSupportClasses it contains a lot of support classes that are typically not used as input for commands directly. You can consider them building blocks for the classes Transaction and OptionHostPostParameters.  There are many classes where I did not create the input objects, I will leave that exercise up to the developer using the library at this time. 
